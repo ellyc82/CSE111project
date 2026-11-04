@@ -2,29 +2,29 @@
 .headers on
 CREATE TABLE Customer ( 
     customer_id INT PRIMARY KEY, 
-    name VARCHAR(100) NOT NULL, 
-    phone VARCHAR(20) 
+    name varchar(100) NOT NULL, 
+    phone varchar(20) 
 ); 
 
 
 CREATE TABLE Manager ( 
     manager_id INT PRIMARY KEY, 
-    name VARCHAR(100) NOT NULL 
+    name varchar(100) NOT NULL 
 
 ); 
 
 CREATE TABLE Chef ( 
     chef_id INT PRIMARY KEY, 
-    name VARCHAR(100) NOT NULL, 
-    specialty VARCHAR(100), 
+    name varchar(100) NOT NULL, 
+    specialty varchar(100), 
     manager_id INT 
 ); 
 
 
 CREATE TABLE Waiter ( 
     waiter_id INT PRIMARY KEY, 
-    name VARCHAR(100) NOT NULL, 
-    phone VARCHAR(20), 
+    name varchar(100) NOT NULL, 
+    phone varchar(20), 
     manager_id INT 
 
 ); 
@@ -32,7 +32,7 @@ CREATE TABLE Waiter (
 
 CREATE TABLE Product ( 
     product_id INT PRIMARY KEY, 
-    product_name VARCHAR(100) NOT NULL, 
+    product_name varchar(100) NOT NULL, 
     price DECIMAL(10,2) NOT NULL
 );
 
@@ -40,7 +40,7 @@ CREATE TABLE Product (
 CREATE TABLE Orders ( 
     order_id INT PRIMARY KEY, 
     order_time DATETIME NOT NULL, 
-    order_status VARCHAR(30), 
+    order_status varchar(30), 
     customer_id INT NOT NULL, 
     waiter_id INT 
 
@@ -49,7 +49,7 @@ CREATE TABLE Orders (
 CREATE TABLE Payment ( 
     payment_id INT PRIMARY KEY, 
     amount DECIMAL(10,2) NOT NULL, 
-    method VARCHAR(30), 
+    method varchar(30), 
     order_id INT NOT NULL UNIQUE 
 
 ); 
