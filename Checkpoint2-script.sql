@@ -33,7 +33,7 @@ CREATE TABLE Waiter (
 CREATE TABLE Product ( 
     product_id INT PRIMARY KEY, 
     product_name VARCHAR(100) NOT NULL, 
-    price DECIMAL(10,2) N
+    price DECIMAL(10,2) NOT NULL
 );
 
 
