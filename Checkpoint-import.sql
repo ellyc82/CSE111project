@@ -1,7 +1,7 @@
 
 -- Checkpoint 2 Import Script
 
-.mode ascii
+.mode 'csv'
 .separator "|"
 
 DELETE FROM Contains;
