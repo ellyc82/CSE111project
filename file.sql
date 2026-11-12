@@ -703,13 +703,11 @@ END;
 
 -- Q38: Adds the items for in-progress order 12 (one carbonara and one tiramisu) with a multi-row INSERT.
 INSERT INTO Contains (order_id, product_id, quantity)
-VALUES (12, 4, 1),
-       (12, 5, 1);
+VALUES (12, 4, 1),(12, 5, 1);
 
 -- Q39: Assigns the pasta chef (Mei Lin) and dessert chef (Amelie Dubois) to order 12.
 INSERT INTO Prepares (chef_id, order_id)
-VALUES (2, 12),
-       (4, 12);
+VALUES (2, 12),(4, 12);
 
 -- Q40: Records order 12's payment; the Q36 trigger should flip that order from 'Preparing' to 'Completed'.
 INSERT INTO Payment (payment_id, amount, method, order_id)
