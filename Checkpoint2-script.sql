@@ -1,23 +1,25 @@
 -- ============================================================================
--- CSE 111 - Checkpoint 2 Script
--- Restaurant Management Database
--- Team members: <FILL IN NAMES>
--- Run with:  sqlite3 Checkpoint2-dbase.sqlite3
---            .read Checkpoint2-script.sql
--- NOTE: data-modification statements use INSERT OR REPLACE / absolute values,
--- so this script can be re-run on the same database without errors.
+-- CSE 111 Fall 2026: Project Checkpoint 2 Script
+-- Project Title: Restaurant Management Database
+-- Team members: Anamaria Rodriguez, Michelle Cheung
+--File: Checkpoint2-script.sql
 -- ============================================================================
-.headers on
-.mode column
+
 
 -- ============================================================================
 -- SCHEMA MODIFICATIONS SINCE CHECKPOINT 1
--- None to the base tables or their columns (Customer, Manager, Chef, Waiter,
+--1. None to the base tables or their columns (Customer, Manager, Chef, Waiter,
 -- Product, Orders, Payment, Prepares, Contains).
--- This script additionally creates one VIEW (v_order_summary, Q34) and two
+-- 2. This script additionally creates one VIEW (v_order_summary, Q34) and two
 -- TRIGGERS (trg_payment_completes_order, trg_order_cascade_delete, Q36-Q37).
 -- ============================================================================
 
+-- ============================================================================
+-- MEMBER CONTRIBUTIONS SUMMARY
+-- ============================================================================
+
+.headers on
+.mode column
 
 -- ############################################################################
 -- PART 1: SIMPLE STATEMENTS (Q1 - Q11)
