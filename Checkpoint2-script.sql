@@ -1,7 +1,7 @@
 -- ============================================================================
 -- CSE 111 Fall 2026: Project Checkpoint 2 Script
--- Project Title: <FILL IN PROJECT TITLE>: Restaurant Management Database
--- Team Members: <FILL IN MEMBER 1>, <FILL IN MEMBER 2>
+-- Project Title: Restaurant Management Database
+-- Team Members: Anamaria Rodriguez, Michelle Cheung
 -- File: Checkpoint2-script.sql
 -- ============================================================================
 
@@ -9,7 +9,7 @@
 -- SCHEMA MODIFICATIONS SINCE CHECKPOINT 1
 -- ============================================================================
 -- 1. Base Tables: None. The nine tables (Customer, Manager, Chef, Waiter,
---    Product, Orders, Payment, Prepares, Contains) are unchanged.
+--    Product, Orders, Payment, Prepares, Contains) remained unchanged.
 -- 2. View Added: v_order_summary, created in Statement 31, joins each order
 --    to its customer, waiter, and payment.
 -- 3. Trigger Integration: trg_payment_completes_order (Statement 33) and
@@ -24,44 +24,44 @@
 -- MEMBER CONTRIBUTIONS SUMMARY (GROUPED AT THE TOP)
 -- ============================================================================
 -- SECTION 1: SIMPLE STATEMENTS
--- Statement 01: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 02: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 03: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 04: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 05: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 06: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 07: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 08: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 09: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 10: <MEMBER 1>: __%, <MEMBER 2>: __%
+-- Statement 01: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 02: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 03: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 04: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 05: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 06: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 07: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 08: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 09: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 10: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
 --
 -- SECTION 2: INTERMEDIATE STATEMENTS
--- Statement 11: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 12: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 13: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 14: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 15: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 16: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 17: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 18: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 19: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 20: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 21: <MEMBER 1>: __%, <MEMBER 2>: __%
+-- Statement 11: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 12: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 13: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 14: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 15: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 16: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 17: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 18: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 19: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 20: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 21: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
 --
 -- SECTION 3: COMPLEX STATEMENTS
--- Statement 22: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 23: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 24: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 25: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 26: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 27: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 28: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 29: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 30: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 31: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 32: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 33: <MEMBER 1>: __%, <MEMBER 2>: __%
--- Statement 34: <MEMBER 1>: __%, <MEMBER 2>: __%
+-- Statement 22: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 23: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 24: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 25: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 26: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 27: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 28: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 29: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 30: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 31: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 32: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 33: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
+-- Statement 34: Anamaria Rodriguez: 50%, Michelle Cheung: 50%
 -- ============================================================================
 
 PRAGMA foreign_keys = ON;
@@ -77,6 +77,7 @@ PRAGMA foreign_keys = ON;
 -- Statement 01: Menu Items by Price
 -- Explanation: List every menu item with its price, most expensive first.
 -- ----------------------------------------------------------------------------
+
 SELECT product_name, price
 FROM Product
 ORDER BY price DESC;
@@ -86,17 +87,20 @@ ORDER BY price DESC;
 -- Explanation: Find all pizza items on the menu using a LIKE pattern on the
 --              product name.
 -- ----------------------------------------------------------------------------
+
+
+
 SELECT product_id, product_name, price
 FROM Product
 WHERE product_name LIKE '%Pizza%';
 
 -- ----------------------------------------------------------------------------
 -- Statement 03: Recent Orders Filter
--- Explanation: Show orders placed on or after November 6, 2026, newest first.
+-- Explanation: Show orders placed on or after November 1, 2026, newest first.
 -- ----------------------------------------------------------------------------
 SELECT order_id, order_time, order_status
 FROM Orders
-WHERE order_time >= '2026-11-06'
+WHERE order_time >= '2026-11-01'
 ORDER BY order_time DESC;
 
 -- ----------------------------------------------------------------------------
@@ -159,6 +163,10 @@ VALUES (22, 'Sparkling Water', 3.50);
 -- Explanation: Remove Frank Ortiz's account, as if he asked to be deleted
 --              (single-row DELETE).
 -- ----------------------------------------------------------------------------
+
+
+
+
 DELETE FROM Customer
 WHERE customer_id = 6;
 
@@ -172,6 +180,8 @@ WHERE customer_id = 6;
 -- Explanation: List every order with the customer who placed it and the
 --              waiter who served it.
 -- ----------------------------------------------------------------------------
+
+
 SELECT
     O.order_id,
     O.order_time,
@@ -182,7 +192,6 @@ FROM Orders O
 JOIN Customer C ON O.customer_id = C.customer_id
 JOIN Waiter W ON O.waiter_id = W.waiter_id
 ORDER BY O.order_time;
-
 -- ----------------------------------------------------------------------------
 -- Statement 12: Chefs and Their Managers (Inner Join)
 -- Explanation: Join each chef to the manager they report to.
@@ -214,6 +223,10 @@ ORDER BY orders_placed DESC, C.name;
 -- Explanation: Summarize payments by method, keeping only methods that were
 --              used at least 3 times.
 -- ----------------------------------------------------------------------------
+
+
+
+
 SELECT
     method,
     COUNT(*) AS num_payments,
@@ -228,6 +241,7 @@ ORDER BY total_amount DESC;
 -- Explanation: Compute the number of items and the menu-price subtotal for
 --              every order that has line items.
 -- ----------------------------------------------------------------------------
+
 SELECT
     CT.order_id,
     SUM(CT.quantity) AS items,
