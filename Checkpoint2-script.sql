@@ -15,9 +15,6 @@
 -- 3. Trigger Integration: trg_payment_completes_order (Statement 33) and
 --    trg_order_cascade_delete (Statement 34) were added to keep order data
 --    consistent when payments are recorded and orders are deleted.
--- 4. Re-runnable: data-modification statements use INSERT OR REPLACE and
---    absolute values, and DROP ... IF EXISTS precedes each CREATE VIEW/TRIGGER,
---    so this script runs cleanly more than once on the same database.
 -- ============================================================================
 
 -- ============================================================================
@@ -77,7 +74,6 @@ PRAGMA foreign_keys = ON;
 -- Statement 01: Menu Items by Price
 -- Explanation: List every menu item with its price, most expensive first.
 -- ----------------------------------------------------------------------------
-
 SELECT product_name, price
 FROM Product
 ORDER BY price DESC;
@@ -87,9 +83,6 @@ ORDER BY price DESC;
 -- Explanation: Find all pizza items on the menu using a LIKE pattern on the
 --              product name.
 -- ----------------------------------------------------------------------------
-
-
-
 SELECT product_id, product_name, price
 FROM Product
 WHERE product_name LIKE '%Pizza%';
@@ -163,10 +156,6 @@ VALUES (22, 'Sparkling Water', 3.50);
 -- Explanation: Remove Frank Ortiz's account, as if he asked to be deleted
 --              (single-row DELETE).
 -- ----------------------------------------------------------------------------
-
-
-
-
 DELETE FROM Customer
 WHERE customer_id = 6;
 
@@ -180,8 +169,6 @@ WHERE customer_id = 6;
 -- Explanation: List every order with the customer who placed it and the
 --              waiter who served it.
 -- ----------------------------------------------------------------------------
-
-
 SELECT
     O.order_id,
     O.order_time,
@@ -192,6 +179,7 @@ FROM Orders O
 JOIN Customer C ON O.customer_id = C.customer_id
 JOIN Waiter W ON O.waiter_id = W.waiter_id
 ORDER BY O.order_time;
+
 -- ----------------------------------------------------------------------------
 -- Statement 12: Chefs and Their Managers (Inner Join)
 -- Explanation: Join each chef to the manager they report to.
@@ -223,10 +211,6 @@ ORDER BY orders_placed DESC, C.name;
 -- Explanation: Summarize payments by method, keeping only methods that were
 --              used at least 3 times.
 -- ----------------------------------------------------------------------------
-
-
-
-
 SELECT
     method,
     COUNT(*) AS num_payments,
@@ -241,7 +225,6 @@ ORDER BY total_amount DESC;
 -- Explanation: Compute the number of items and the menu-price subtotal for
 --              every order that has line items.
 -- ----------------------------------------------------------------------------
-
 SELECT
     CT.order_id,
     SUM(CT.quantity) AS items,
@@ -330,7 +313,6 @@ FROM Orders O
 JOIN Payment P ON P.order_id = O.order_id
 GROUP BY DATE(O.order_time)
 ORDER BY order_date;
-
 
 -- ============================================================================
 -- SECTION 3: COMPLEX STATEMENTS (Statements 22 to 34)
